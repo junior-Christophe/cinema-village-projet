@@ -1,3 +1,6 @@
+// Dernières améliorations - Optimisation chargement films
+// Projet Cinéma Village - 12/15/2025 21:24:53
+
 const homeContainer = document.getElementById('home-container');
 const OMDB_API_KEY = 'f840fb38';
 
@@ -91,3 +94,4 @@ if (loadFeaturedBtn) {
 }
 
 loadPopular();
+
