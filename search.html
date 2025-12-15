@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <style>
+        body { background: black; color: white; min-width: 100vw; min-height: 100vh; }
+        form { text-align:center; margin-top: 16px; }
+        input { padding: 8px; width: 92%; max-width: 520px; }
+        /* Mobile-first single column */
+        .image-container{ width: 94%; display: grid; grid-template-columns: 1fr; gap: 12px; margin: 12px auto; }
+        @media (min-width: 700px) { .image-container{ grid-template-columns: repeat(auto-fit,minmax(250px,0.4fr)); } }
+        img { width: 100%; display:block; }
+        .more-btn{
+            display:inline-block;
+            padding:6px 10px;
+            color:#90caf9;
+            border:2px solid #90caf9;
+            border-radius:6px;
+            text-decoration:none;
+            transition: background-color 0.18s ease, color 0.18s ease, transform 0.12s ease;
+            margin-top:6px;
+        }
+        .more-btn:hover{ background-color: #90caf9; color: #021; transform: translateY(-2px); }
+        .more-btn:focus{ outline:3px solid #b3e5fc; outline-offset:3px; }
+        button:focus{ outline:3px solid #b3e5fc; }
+        .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
+        .skip-link:focus{left:8px;top:8px;width:auto;height:auto;background:#fff;color:#000;padding:8px;border-radius:4px}
+        .visually-hidden{position:absolute;border:0;padding:0;margin:-1px;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+    </style>
+    </head>
+<body>
+    <nav style="text-align:center; margin-bottom: 12px;">
+        <a href="index.html" style="color:white; margin-right:12px;">Home</a>
+        <a href="search.html" style="color:white;">Search</a>
+    </nav>
+    <h1 style="text-align:center;">Search Shows</h1>
+    <form role="search" onsubmit="return false;">
+        <label for="search-input" class="visually-hidden">Rechercher un film</label>
+        <input id="search-input" type="text" class="Search-input" placeholder="Tapez pour rechercher..." autocomplete="off" aria-label="Recherche de films">
+        <button type="button" class="Search-button" aria-label="Lancer la recherche">Search</button>
+    </form>
+    <p class="error-message" aria-live="polite" style="text-align:center"></p>
+    <div class="image-container" id="search-container"></div>
+    <div style="text-align:center; margin-top:12px;">
+        <button id="load-more" style="padding:8px 12px;" aria-label="Charger plus de résultats">Charger</button>
+    </div>
+    <script src="search.js"></script>
+</body>
+</html>
