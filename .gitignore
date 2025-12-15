@@ -1,0 +1,8 @@
+# Fichiers à NE PAS mettre sur GitHub
+node_modules/    # Dossier npm
+.env             # Clés API secrètes
+.DS_Store        # Fichiers Mac
+dist/            # Dossier build
+*.log            # Fichiers log
+api-key.txt      # Ta clé API
+
